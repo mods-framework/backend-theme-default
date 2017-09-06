@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <head>
+       	<meta name="charset" content="utf-8"/>
+		<meta name="x-ua-compatible" content="ie=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<css src="theme.css" media="screen,projection"/>
+		<css src="material-icons.css" media="screen,projection"/>		
+		<script src="jquery.js" />
+		<script type="text/javascript" src="materialize.js"></script>
+    </head>
+    <body>
+
+    </body>
+</page>
