@@ -1,0 +1,12 @@
+label.invalid {
+   font-size: 12.8px;
+   font-size: 0.8rem;
+   font-weight: 500;
+   color: red !important;
+   top: 50px !important;
+}
+
+label.invalid.active {
+   -webkit-transform: translateY(0%) !important;
+   transform: translateY(0%) !important;
+}
