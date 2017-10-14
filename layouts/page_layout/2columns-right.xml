@@ -3,7 +3,7 @@
     <update handle="1column"/>
 	<referenceContainer name="columns">
         <container name="div.sidebar.right" htmlTag="div" htmlClass="sidebar sidebar-right" after="main">
-            <container name="sidebar.right" as="sidebar_right" label="Sidebar Right"/>
+            <container name="sidebar.right" label="Sidebar Right"/>
         </container>
     </referenceContainer>
 </layout>
