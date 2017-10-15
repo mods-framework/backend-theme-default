@@ -7,5 +7,6 @@
         $(".side-nav-button").sideNav();
         $('.collapsible').collapsible();
         $('.modal').modal();
+        funcQueue.runAll();
     });
 </script>

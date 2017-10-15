@@ -2,11 +2,15 @@
 <layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <container name="root">
         <container name="after.body.start" before="-" label="Page Top"/>
-        <container name="page.wrapper" htmlTag="div" htmlClass="main">
+        <container name="page.wrapper">
             <container name="global.notices" before="-"/>
-            <container name="main.content" htmlTag="main" htmlId="maincontent" htmlClass="wrapper">
-                <container name="columns" htmlTag="section" htmlClass="content">
-                    <container name="main" label="Main Content Container" htmlTag="div" htmlClass="container"/>
+            <container name="main.content" htmlTag="main" htmlId="main">
+                <container name="columns" htmlTag="div" htmlClass="wrapper">
+                    <container name="main.wrapper" label="Main Content Wrapper" htmlTag="section" htmlId="content">
+                        <container name="main.wrapper.cover" label="Main Content Wrapper Cover" htmlTag="div" htmlClass="container">
+                            <container name="main" label="Main Content Container" />
+                        </container>    
+                    </container>
                 </container>
             </container>
             <container name="page.bottom.container" label="Before Page Footer Container" after="main.content" htmlTag="div" htmlClass="page-bottom"/>

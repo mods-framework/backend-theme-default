@@ -1,3 +1,29 @@
+<script>
+     var funcQueue = (function () {
+
+        function funcQueue() {
+          this._funcList = [];
+        } 
+        var _proto = funcQueue.prototype;
+
+        _proto.runAll = function runAll() {
+          var len = this._funcList.length, 
+              index = 0;
+
+          for (; index < len; index++)
+             this._funcList[index].call();
+
+        }
+
+        _proto.add = function add(inFunc) {
+            this._funcList.push(inFunc);
+        }
+
+        return funcQueue;
+
+    })();
+    var funcQueue = new funcQueue();
+</script>
 <header>
     <!-- start header nav-->
     <div class="navbar-fixed">

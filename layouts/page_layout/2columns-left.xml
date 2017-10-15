@@ -2,7 +2,7 @@
 <layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<update handle="1column"/>
 	<referenceContainer name="columns">
-        <container name="div.sidebar.left" htmlTag="aside" htmlClass="sidebar--left" before="main">
+        <container name="div.sidebar.left" htmlTag="aside" htmlClass="sidebar--left" before="main.wrapper">
             <container name="sidebar.left" label="Sidebar Left"/>
         </container>
     </referenceContainer>
