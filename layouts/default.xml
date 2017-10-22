@@ -21,7 +21,7 @@
     		<block class="Mods\Backend\Block\SidebarLeft" name="left.menu" template="backend::sidebar.left" />
     	</referenceContainer>
     	<referenceContainer name="footer.container">
-    		<block class="Mods\Backend\Block\Footer" name="footer" template="backend::footer" />
+    		<block class="Mods\View\Blocks\EmptyBlock" name="footer" template="backend::footer" />
     	</referenceContainer>
 
         <referenceContainer name="columns">
