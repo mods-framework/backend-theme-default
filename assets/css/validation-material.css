@@ -4,6 +4,7 @@ label.invalid {
    font-weight: 500;
    color: red !important;
    top: 50px !important;
+   text-transform: initial;
 }
 
 label.invalid.active {

@@ -1,0 +1,61 @@
+ <?php $settings =  array_dot($block->getSettings()); ?>
+
+ <div class="row">
+  <div class="card with-form col s12">
+    <?php $icon = $block->getHeaderIcon(); ?>
+    @if(!empty($icon))
+    <div class="card-header sup card-header-icon red accent-2">
+        {!! $icon !!}   
+    </div>
+    @endif
+    <div class="card-content">
+
+        <h4 class="card-title">{{ $block->getTitle() }}</h4>
+        {!! $formOpen !!}
+
+          <?php $groupStack = []; ?>
+
+
+          @foreach ($formFields as $field)
+            @if(!is_null($field->getGroup()))
+              <?php $groupName = $field->getGroup(); ?>
+            @else
+              <?php $groupName = $field->getName(); ?>
+            @endif
+            @push($groupName)
+              @if($field->getType() == 'file')
+
+                 <div class="file-field input-field  @if(!is_null($field->getGroup())){{ array_get($settings, 'group.class.'.$groupName, 's3') }}@else s12 @endif">
+                    <div class="btn">
+                      <span>{{ $field->getLabel()->getLabelTxt() }}</span>
+                      {!! $field !!}
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path {{$field->getClass()}}" type="text">
+                    </div>
+                  </div>
+
+              @else
+                <div class="@if(!in_array($field->getType(), ['radio', 'checkbox']))input-field @endif col @if(!is_null($field->getGroup())){{ array_get($settings, 'group.class.'.$groupName, 's3') }}@else s12 @endif">
+                  {!! $field !!}
+                  {!! $field->getLabel() !!}
+                  @if ($block->hasError($field->getName())) 
+                    <label id="{{$field->getName()}}-error" class="invalid" for="{{$field->getName()}}">{{ $block->getError($field->getName()) }}</label>
+                  @endif
+                </div>
+              @endif
+            @endpush
+            <?php $groupStack[$groupName] = $groupName; ?>
+          @endforeach
+
+          @foreach ($groupStack as $group)
+            <div class="row">
+              @stack($group)
+            </div>
+          @endforeach
+
+      {!! $formClose !!}
+
+    </div>
+  </div>  
+</div>

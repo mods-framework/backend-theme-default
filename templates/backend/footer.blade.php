@@ -7,6 +7,7 @@
         $(".side-nav-button").sideNav();
         $('.collapsible').collapsible();
         $('.modal').modal();
+        $('select').material_select();
         funcQueue.runAll();
     });
 </script>

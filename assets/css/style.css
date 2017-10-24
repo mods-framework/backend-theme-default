@@ -200,6 +200,12 @@ ul.side-nav.leftside li.active {
 }
  
 /*Main Content*/
+
+#content {
+    padding: 30px 15px;
+    min-height: calc(100vh - 123px);
+}
+
 #main {
   padding-left: 220px;
 }
@@ -236,4 +242,32 @@ ul.side-nav.leftside li.active {
 
 .side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active a.active {
     color: #fff;
+}
+
+/*Card With From*/
+.card.with-form .card-header.sup {
+    box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.42), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    margin: -20px 15px 0;
+    border-radius: 3px;
+    padding: 15px;
+    background-color: #999999;
+    color: #FFFFFF;
+    position: relative;
+}
+.card.with-form .card-header.card-header-icon {
+    float: left;
+}
+
+.card.with-form .card-header.card-header-icon+.card-content .card-title {
+    padding-bottom: 15px;
+}
+
+.card.with-form .card-title {
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+.card.with-form .card-content {
+  padding: 15px 20px;
+  position: relative;
 }
