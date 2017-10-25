@@ -23,7 +23,21 @@
               <?php $groupName = $field->getName(); ?>
             @endif
             @push($groupName)
-              @if($field->getType() == 'file')
+              @if($field->getType() == 'markdown')
+
+                <div class="file-field @if(!is_null($field->getGroup())){{ array_get($settings, 'group.class.'.$groupName, 's3') }}@else s12 @endif">
+                    {!! $field->getLabel() !!}
+                    {!! $field !!}
+                    <script>
+                    var simplemde = new SimpleMDE({ 
+                      autoDownloadFontAwesome: false,
+                      element: document.getElementById('{{$field->getId()}}'),
+                      forceSync: true,
+                    });
+                    </script>
+                </div>
+
+              @elseif($field->getType() == 'file')
 
                  <div class="file-field input-field  @if(!is_null($field->getGroup())){{ array_get($settings, 'group.class.'.$groupName, 's3') }}@else s12 @endif">
                     <div class="btn">
