@@ -29,13 +29,33 @@
                     {!! $field->getLabel() !!}
                     {!! $field !!}
                     <script>
-                    var simplemde = new SimpleMDE({ 
+                    var editor = new SimpleMDE({ 
                       autoDownloadFontAwesome: false,
                       element: document.getElementById('{{$field->getId()}}'),
                       forceSync: true,
+                      promptURLs: true,
+                      jQValidation: true
+                    });
+
+                    editor.codemirror.on("change", function() {
+                        var element = $(editor.element);
+                        $(element).val(editor.value());
+                        $(element).trigger('keyup');
+                    });
+
+                    editor.codemirror.on("focus", function() {
+                        $(editor.element).trigger('focus');
+                    });
+
+                    editor.codemirror.on("blur", function() {
+                        $(editor.element).trigger('blur');
                     });
                     </script>
                 </div>
+
+              @elseif($field->getType() == 'html')  
+
+                {!! $field !!}
 
               @elseif($field->getType() == 'file')
 
