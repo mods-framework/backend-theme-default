@@ -26,36 +26,6 @@ header .brand-logo span.d {
 header .brand-logo span.s {       
               color:#ff9100 ;
 }
-
-@font-face {
-  font-family: "Roboto";
-  src: local(Roboto Thin), url("@{baseurl}fonts/roboto/Roboto-Thin.woff2") format("woff2"), url("@{baseurl}fonts/roboto/Roboto-Thin.woff") format("woff");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: local(Roboto Light), url("@{baseurl}fonts/roboto/Roboto-Light.woff2") format("woff2"), url("@{baseurl}fonts/roboto/Roboto-Light.woff") format("woff");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: local(Roboto Regular), url("@{baseurl}fonts/roboto/Roboto-Regular.woff2") format("woff2"), url("@{baseurl}fonts/roboto/Roboto-Regular.woff") format("woff");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: local(Roboto Medium), url("@{baseurl}fonts/roboto/Roboto-Medium.woff2") format("woff2"), url("@{baseurl}fonts/roboto/Roboto-Medium.woff") format("woff");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Roboto";
-  src: local(Roboto Bold), url("@{baseurl}fonts/roboto/Roboto-Bold.woff2") format("woff2"), url("@{baseurl}fonts/roboto/Roboto-Bold.woff") format("woff");
-  font-weight: 700;
-}
  
 @media only screen and (max-width: 992px) {
   nav .nav-wrapper {

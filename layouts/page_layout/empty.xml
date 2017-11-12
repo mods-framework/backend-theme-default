@@ -7,7 +7,7 @@
             <container name="main.content" htmlTag="main" htmlId="main">
                 <container name="columns" htmlTag="div" htmlClass="wrapper">
                     <container name="main.wrapper" label="Main Content Wrapper" htmlTag="section" htmlId="content">
-                        <container name="main.wrapper.cover" label="Main Content Wrapper Cover" htmlTag="div" htmlClass="container">
+                        <container name="main.wrapper.cover" label="Main Content Wrapper Cover" htmlTag="div" htmlClass="container-fluid">
                             <container name="main" label="Main Content Container" />
                         </container>    
                     </container>
