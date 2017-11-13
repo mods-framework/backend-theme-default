@@ -3,11 +3,12 @@
     <head>
        	<meta name="charset" content="utf-8"/>
 		<meta name="x-ua-compatible" content="ie=edge"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link src="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-		<css src="theme.css" media="screen,projection"/>		
-		<css src="style.css" media="screen,projection"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />		
+		<css src="theme.css" media="screen,projection"/>
+        <css src="open-iconic-bootstrap.css"/>
+		<css src="style.css"/>
 		<script src="jquery.js" />
+        <script src="popper.js" />
 		<script src="bootstrap.js" />
     </head>
     <body>
