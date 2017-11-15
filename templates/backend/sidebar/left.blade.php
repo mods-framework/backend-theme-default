@@ -1,1 +1,1 @@
-{!! $block->getSideMenu() !!}
+<nav>{!! $block->getSideMenu() !!}</nav>

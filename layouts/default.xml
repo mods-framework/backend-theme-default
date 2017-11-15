@@ -10,8 +10,10 @@
 		<script src="jquery.js" />
         <script src="popper.js" />
 		<script src="bootstrap.js" />
+        <script src="dashboard.js" />
     </head>
     <body>
+        <attribute name="class" value="show-side-nav" />
     	<referenceContainer name="header.container">
     		<block class="Mods\Backend\Block\Header" name="header" template="backend::header" />
     	</referenceContainer>
