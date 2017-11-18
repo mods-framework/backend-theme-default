@@ -37,6 +37,14 @@ header.header {
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'summernote';
+    font-style: normal;
+    font-weight: normal;
+    src: url('@{baseurl}fonts/summernote.eot');
+    src: url('@{baseurl}fonts/summernote.eot?#iefix') format('embedded-opentype'), url('@{baseurl}fonts/summernote.woff') format('woff'), url('@{baseurl}fonts/summernote.ttf') format('truetype');
+}
+
 nav ol, nav ul {
     list-style: none;
     list-style-image: none;
