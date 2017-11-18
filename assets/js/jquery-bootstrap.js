@@ -17,7 +17,10 @@ if (validation) {
            } else {
                error.insertAfter(element);
            }
-       }
+       },
+       // This will ignore all hidden elements alongside `contenteditable` elements
+       // that have no `name` attribute
+       ignore: ":hidden, [contenteditable='true']:not([name])"
    });
 
    $(document).ready(function(){

@@ -10,69 +10,62 @@
       <?php $groupName = $field->getName(); ?>
     @endif
     @push($groupName)
-      @if($field->getType() == 'markdown')
+      <div class="form-group row">
+          <div class="@if(!is_null($field->getGroup())){{ array_get($settings, 'group.class.'.$groupName, 'col-sm-3') }}@else col-sm-12 @endif">
+            @if($field->getType() == 'editor')
+              {!! $field->getLabel() !!}
+              <div class="form-control with-editor">                     
+                <div id="{{$field->getId()}}-container" class="pell editor" style="height: 350px;"></div>
+                {!! $field !!}
+              </div>  
+              <script>
+                funcQueue.add(function() {
+                  $('#{{$field->getId()}}').css({
+                      "visibility":"hidden",
+                      "height":"0px",
+                      "display": "block"
+                  });
+                  $('#{{$field->getId()}}-container').summernote({
+                    height: 300,
+                    callbacks: {
+                        onFocus: function() {
+                          $('#{{$field->getId()}}').trigger('focus');
+                        },
+                        onBlur: function() {
+                          $('#{{$field->getId()}}').trigger('blur');
+                        },
+                        onChange: function(contents, $editable) {
+                          var element = $('#{{$field->getId()}}');
+                          if ($('#{{$field->getId()}}-container').summernote('isEmpty')) {
+                            contents = '';
+                          }else if(contents=='<p><br></p>'){
+                            contents = '';
+                          }
+                          element.val(contents);
+                          element.trigger('keyup');
+                        }
+                    }
+                  });
+                });
+              </script>
 
-        <div class="file-field @if(!is_null($field->getGroup())){{ array_get($settings, 'group.class.'.$groupName, 's3') }}@else s12 @endif">
-            {!! $field->getLabel() !!}
-            {!! $field !!}
-            <script>
-            var editor = new SimpleMDE({ 
-              autoDownloadFontAwesome: false,
-              element: document.getElementById('{{$field->getId()}}'),
-              forceSync: true,
-              promptURLs: true,
-              jQValidation: true
-            });
-
-            editor.codemirror.on("change", function() {
-                var element = $(editor.element);
-                $(element).val(editor.value());
-                $(element).trigger('keyup');
-            });
-
-            editor.codemirror.on("focus", function() {
-                $(editor.element).trigger('focus');
-            });
-
-            editor.codemirror.on("blur", function() {
-                $(editor.element).trigger('blur');
-            });
-            </script>
-        </div>
-
-      @elseif($field->getType() == 'html')  
-
-        {!! $field !!}
-
-      @elseif($field->getType() == 'file')
-
-         <div class="file-field input-field  @if(!is_null($field->getGroup())){{ array_get($settings, 'group.class.'.$groupName, 's3') }}@else s12 @endif">
-            <div class="btn">
-              <span>{{ $field->getLabel()->getLabelTxt() }}</span>
-              {!! $field !!}
-            </div>
-            <div class="file-path-wrapper">
-              <input class="file-path {{$field->getClass()}}" type="text">
-            </div>
+            @elseif($field->getType() == 'html')  
+                {!! $field !!}
+            @else
+                {!! $field->getLabel() !!}
+                {!! $field !!}
+            @endif
+            @if ($block->hasError($field->getName())) 
+                <div class="invalid-feedback">{{ $block->getError($field->getName()) }}</div>
+            @endif
           </div>
-
-      @else
-        <div class="@if(!in_array($field->getType(), ['radio', 'checkbox']))input-field @endif col @if(!is_null($field->getGroup())){{ array_get($settings, 'group.class.'.$groupName, 's3') }}@else s12 @endif">
-          {!! $field !!}
-          {!! $field->getLabel() !!}
-          @if ($block->hasError($field->getName())) 
-            <label id="{{$field->getName()}}-error" class="invalid" for="{{$field->getName()}}">{{ $block->getError($field->getName()) }}</label>
-          @endif
-        </div>
-      @endif
+      </div>
     @endpush
     <?php $groupStack[$groupName] = $groupName; ?>
   @endforeach
 
-  @foreach ($groupStack as $group)
-    <div class="row">
+  @foreach ($groupStack as $group)    
       @stack($group)
-    </div>
   @endforeach
 
 {!! $formClose !!}
