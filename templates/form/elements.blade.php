@@ -14,7 +14,7 @@
           <div class="@if(!is_null($field->getGroup())){{ array_get($settings, 'group.class.'.$groupName, 'col-sm-3') }}@else col-sm-12 @endif">
             @if($field->getType() == 'editor')
               {!! $field->getLabel() !!}
-              <div class="form-control with-editor">                     
+              <div class="form-control with-editor px-0">                     
                 <div id="{{$field->getId()}}-container" class="pell editor" style="height: 350px;"></div>
                 {!! $field !!}
               </div>  

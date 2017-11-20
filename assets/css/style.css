@@ -178,3 +178,13 @@ nav ol, nav ul {
 .form-control.with-editor {
   border: none;
 }
+
+/* cards */
+
+.card .card-header .arrow .oi-caret-top, .card .card-header .collapsed .arrow .oi-caret-bottom {
+    display: none;
+}
+
+.card .card-header .collapsed .arrow .oi-caret-top {
+    display: block;
+}
