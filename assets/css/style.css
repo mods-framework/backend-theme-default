@@ -2,17 +2,17 @@ body {
     background-color: #f9f9f9;
 }
 
-header .brand-logo span.m {     
+.brand-logo span.m {     
   color:#00bcd4;
 }
-header .brand-logo span.o {       
+.brand-logo span.o {       
   color:#69f0ae;
 }
-header .brand-logo span.d {       
-  color:#ff0097 ;
+.brand-logo span.d {       
+  color:#ff0097;
 }
-header .brand-logo span.s {       
-  color:#ff9100 ;
+.brand-logo span.s {       
+  color:#ff9100;
 }
 
 header.header {

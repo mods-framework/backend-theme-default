@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(document).ready(function() {
 
     $('.show-hide-sidebar-toggle').on('click', function(e) {

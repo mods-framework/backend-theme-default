@@ -7,9 +7,7 @@
 		<css src="theme.css" media="screen,projection"/>
         <css src="open-iconic-bootstrap.css"/>
 		<css src="style.css"/>
-		<script src="jquery.js" />
-        <script src="popper.js" />
-		<script src="bootstrap.js" />
+		<script src="jqbootstrap.js" />
         <script src="dashboard.js" />
     </head>
     <body>

@@ -1,3 +1,7 @@
+import $ from 'jquery';
+import 'jquery-validation';
+
+
 var validation = $.isFunction($.fn.valid) ? 1 : 0;
 if (validation) {
   $.validator.setDefaults({

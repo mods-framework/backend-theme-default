@@ -1,0 +1,14 @@
+{
+  "name": "mods-backend-default-theme",
+  "version": "0.0.0",
+  "scripts": {
+  },
+  "dependencies": {
+    "bootstrap": "^4.1",
+    "jquery": "^3.2.1",
+    "jquery-validation": "^1.17.0",
+    "popper.js": "^1.12.9",
+    "vue": "^2.5.9"
+  },
+  "devDependencies": {}
+}
