@@ -10,7 +10,7 @@
             </div>
             
             <div class="card-body">                
-                {!! $form !!}   
+                {!! $block->getChildHtml() !!}   
             </div>
         </div>     
     </div>  
